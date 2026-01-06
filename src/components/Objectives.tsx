@@ -6,38 +6,38 @@ const Objectives: React.FC = () => {
   const objectives = [
     {
       id: "SO1",
-      title: "Develop Novel Neuromorphic Architectures",
+      title: "Multi-Modal Representation Learning",
       icon: <Brain className="w-8 h-8" />,
-      description: "Design and implement innovative neuromorphic computing architectures that mimic biological neural networks for enhanced AI processing capabilities.",
+      description: "Develop a human-like multimodal agent that learns unified, graph-structured representations across text, image, audio/speech, and video for robust semantic understanding and generation.",
       details: [
-        "Create bio-inspired neural network topologies",
-        "Develop adaptive learning mechanisms",
-        "Implement energy-efficient processing units",
-        "Design scalable neuromorphic chip architectures"
+        "Build concept-level graphs from grid/patch and token features",
+        "Learn aligned multimodal embeddings with contrastive and structured objectives",
+        "Evaluate grounding, compositionality, and robustness across modalities",
+        "Release reusable representation and evaluation components"
       ]
     },
     {
-      id: "SO2", 
-      title: "Optimize AI-Hardware Co-design",
+      id: "SO2",
+      title: "Supervised Fine-Tuning & Optimization",
       icon: <Zap className="w-8 h-8" />,
-      description: "Establish seamless integration between artificial intelligence algorithms and specialized neuromorphic hardware for maximum performance efficiency.",
+      description: "Refine and optimize the multimodal agent through supervised fine-tuning on curated multimodal datasets, improving reliability, generalization, and controllability.",
       details: [
-        "Develop hardware-aware AI algorithms",
-        "Create optimization frameworks for co-design",
-        "Implement real-time adaptation mechanisms",
-        "Design efficient memory architectures"
+        "Curate training mixtures and task formulations across modalities",
+        "Fine-tune with quality/robustness targets and safety-aware evaluation",
+        "Improve efficiency via parameter-efficient adaptation and scalable training",
+        "Establish benchmarking protocols for generalization and failure modes"
       ]
     },
     {
       id: "SO3",
-      title: "Validate Real-world Applications",
+      title: "Neural Representation Learning & Decoding (EEG/MEG/fMRI)",
       icon: <Target className="w-8 h-8" />,
-      description: "Demonstrate the practical effectiveness of neuromorphic AI systems through comprehensive testing in real-world scenarios and applications.",
+      description: "Develop unified neural encoders and decoding pipelines that map brain activity to aligned multimodal semantics, enabling neural-to-speech/audio reconstruction with strong cross-subject transfer.",
       details: [
-        "Conduct performance benchmarking studies",
-        "Validate energy efficiency improvements",
-        "Test scalability in various domains",
-        "Measure real-world deployment feasibility"
+        "Build modality-agnostic encoders for EEG/MEG/fMRI time series",
+        "Align neural embeddings with multimodal semantic spaces (text/audio/image)",
+        "Develop efficient decoders for speech/audio reconstruction and evaluation",
+        "Validate generalization across subjects, sessions, and datasets"
       ]
     }
   ];
@@ -50,8 +50,8 @@ const Objectives: React.FC = () => {
             Research Objectives
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our research is structured around three specific objectives that drive innovation 
-            in neuromorphic computing and AI-hardware integration
+            Our research is structured around three specific objectives that drive innovation
+            in multimodal AI, graph-structured fusion, and neural decoding
           </p>
         </div>
 
@@ -107,8 +107,8 @@ const Objectives: React.FC = () => {
               Integrated Approach
             </h3>
             <p className="text-gray-600 max-w-2xl">
-              These objectives work synergistically to advance the field of neuromorphic computing, 
-              from theoretical foundations to practical implementations that can transform AI processing efficiency.
+              These objectives work synergistically to advance multimodal AI systems,
+              from unified representation learning to neural decoding pipelines that bridge brain activity and speech/audio reconstruction.
             </p>
           </div>
         </div>
