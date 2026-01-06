@@ -1,4 +1,10 @@
-# Project Build Guide
+# CASPER Project
+
+Cross-Modal Alignment for Semantic Processing and Effective Representation - A Marie Skłodowska-Curie Actions (MSCA) funded research project.
+
+## 🌐 Live Site
+
+Visit: https://ambujmehrish.github.io/CASPER/
 
 ## Tech Stack
 
@@ -8,6 +14,8 @@ This project is built using the following technologies:
 - TypeScript
 - React
 - shadcn-ui
+- TailwindCSS
+- TanStack React Query
 - Tailwind CSS
 
 ## Prerequisites
