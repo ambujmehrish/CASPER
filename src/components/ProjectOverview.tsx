@@ -11,8 +11,7 @@ const ProjectOverview: React.FC = () => {
             Project Overview
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            CASPER represents a groundbreaking approach to understanding consciousness through 
-            the convergence of artificial intelligence and neuroscience research.
+            CASPER is an MSCA research project advancing multimodal AI by aligning heterogeneous modalities—including neural signals—with language-centric models. The project combines graph-structured fusion, scalable training, and rigorous evaluation to deliver more grounded multimodal understanding and practical neural-to-speech reconstruction pipelines.
           </p>
         </div>
 
@@ -27,19 +26,19 @@ const ProjectOverview: React.FC = () => {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Develop novel computational models of consciousness based on neuroscientific principles
+                  Learn shared semantic spaces across text, image, audio/speech, and video with explicit cross-modal alignment objectives
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Bridge the gap between theoretical consciousness studies and practical AI applications
+                  Improve grounding and robustness of multimodal generation and reasoning via graph-structured representations
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Create interpretable AI systems that can explain their decision-making processes
+                  Enable neural decoding of speech/audio (and related percepts) from EEG/MEG/fMRI with strong generalization and uncertainty awareness
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Advance our understanding of consciousness through computational modeling
+                  Release reproducible artifacts (code, models, evaluation protocols) aligned with open science practices
                 </li>
               </ul>
             </CardContent>
@@ -55,19 +54,19 @@ const ProjectOverview: React.FC = () => {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Interdisciplinary approach combining neuroscience, AI, and cognitive science
+                  Graph-based multimodal fusion: hierarchical aggregation and concept-level representations using GNNs
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Development of biologically-inspired neural network architectures
+                  Alignment + supervised fine-tuning: cross-modal contrastive/objective design + task-specific adaptation on curated multimodal datasets
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Integration of attention mechanisms and global workspace theory
+                  Neural foundation modeling: unified encoders for EEG/MEG/fMRI with cross-subject/session normalization and efficient decoding heads
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Empirical validation through behavioral and neuroimaging studies
+                  Evaluation & reliability: benchmarking for factual/semantic grounding, robustness across domains, and neural reconstruction fidelity
                 </li>
               </ul>
             </CardContent>
@@ -85,7 +84,7 @@ const ProjectOverview: React.FC = () => {
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Artificial Intelligence</h4>
               <p className="text-gray-600 text-sm">
-                Advancing AI systems with consciousness-inspired architectures for better interpretability and human-like reasoning.
+                Advancing grounded multimodal AI by combining graph neural networks with multimodal LLMs for more reliable semantic reasoning across text, vision, and audio.
               </p>
             </div>
             <div className="text-center">
@@ -94,7 +93,7 @@ const ProjectOverview: React.FC = () => {
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Neuroscience</h4>
               <p className="text-gray-600 text-sm">
-                Contributing to our understanding of consciousness through computational models and empirical research.
+                Building unified representations for EEG/MEG/fMRI and aligning them with multimodal semantics to enable robust decoding and reconstruction of speech/audio from brain activity.
               </p>
             </div>
             <div className="text-center">
@@ -103,7 +102,7 @@ const ProjectOverview: React.FC = () => {
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Research Impact</h4>
               <p className="text-gray-600 text-sm">
-                Fostering interdisciplinary collaboration and training the next generation of consciousness researchers.
+                Delivering reproducible models, benchmarks, and open-science resources that support trustworthy multimodal systems and accelerate translation to speech-related applications.
               </p>
             </div>
           </div>
@@ -112,7 +111,7 @@ const ProjectOverview: React.FC = () => {
         <div className="mt-12 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium">
             <span className="mr-2">🎯</span>
-            Bridging the gap between mind and machine through rigorous scientific research
+            Advancing multimodal AI through graph-structured fusion and neural decoding
           </div>
         </div>
       </div>

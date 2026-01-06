@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-xl sm:text-2xl lg:text-3xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Advancing Computational Approaches for Spatial Pattern Recognition in Neuroscience
+            Cross-Modal Alignment for Semantic Processing and Effective Representation
           </p>
 
           {/* Key Objectives Cards */}
@@ -43,9 +43,9 @@ const Hero: React.FC = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-blue-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6 text-center">
                 <Brain className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Neural Pattern Analysis</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Cross-Modal Representation Learning</h3>
                 <p className="text-gray-600 text-sm">
-                  Developing advanced algorithms for spatial pattern recognition in neural networks
+                  Build unified representations across text, image, audio/speech, and video using structured fusion and graph-based learning.
                 </p>
               </CardContent>
             </Card>
@@ -53,9 +53,9 @@ const Hero: React.FC = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-purple-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6 text-center">
                 <Cpu className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">AI Innovation</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">GNN–LLM Fusion & Grounding</h3>
                 <p className="text-gray-600 text-sm">
-                  Integrating cutting-edge artificial intelligence with neuroscience research
+                  Integrate graph neural networks with multimodal LLMs to improve semantic grounding, interpretability, and compositional reasoning.
                 </p>
               </CardContent>
             </Card>
@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-indigo-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-6 text-center">
                 <Users className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Collaborative Research</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Neural Decoding to Speech & Audio</h3>
                 <p className="text-gray-600 text-sm">
-                  Building bridges between European research institutions and expertise
+                  Develop neural foundation models to decode and reconstruct speech/audio from brain activity (EEG/MEG/fMRI), targeting reliable zero-/few-shot transfer.
                 </p>
               </CardContent>
             </Card>
@@ -74,9 +74,7 @@ const Hero: React.FC = () => {
           {/* Mission Statement */}
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 mb-12 max-w-4xl mx-auto border border-gray-200">
             <p className="text-lg text-gray-700 leading-relaxed">
-              CASPER represents a groundbreaking initiative in computational neuroscience, 
-              combining state-of-the-art machine learning techniques with advanced spatial 
-              analysis to unlock new insights into neural pattern recognition and brain function.
+              CASPER develops graph-aware multimodal AI that aligns language, vision, audio/speech, and neural signals (EEG/MEG/fMRI) to enable robust understanding and neural-to-speech reconstruction.
             </p>
           </div>
 
