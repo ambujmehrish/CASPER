@@ -21,115 +21,118 @@ interface WorkPackage {
 const Timeline: React.FC = () => {
   const workPackages: WorkPackage[] = [
     {
-      id: 'WP1',
-      title: 'WP1: Management & Monitoring',
-      color: 'from-green-400 to-green-500',
+      id: 'Phase 1',
+      title: 'Literature Review & Data Preparation',
+      color: 'from-purple-400 to-purple-500',
       tasks: [
         {
           id: 'T1.1',
-          title: 'T1.1: Data and Financial management & CDP',
+          title: 'Literature Review & State-of-the-art Analysis',
           startMonth: 1,
-          endMonth: 6,
-          deliverables: [
-            { code: 'CDP', month: 1 },
-            { code: 'DMP', month: 6 }
-          ]
+          endMonth: 3,
+          deliverables: [{ code: 'D1', month: 3 }]
         },
         {
           id: 'T1.2',
-          title: 'T1.2: Planning and Monitoring',
-          startMonth: 6,
-          endMonth: 24,
-          deliverables: [
-            { code: 'D1.1', month: 6 },
-            { code: 'D1.2', month: 12 },
-            { code: 'D1.3', month: 24 }
-          ]
+          title: 'Dataset Collection & Preprocessing',
+          startMonth: 2,
+          endMonth: 5,
+          deliverables: [{ code: 'D2', month: 5 }]
         }
       ]
     },
     {
-      id: 'WP2',
-      title: 'WP2: Architecture & Training',
+      id: 'Phase 2',
+      title: 'Architecture Design & Development',
       color: 'from-orange-400 to-orange-500',
       tasks: [
         {
           id: 'T2.1',
-          title: 'T2.1: Architecture Design',
+          title: 'Novel Architecture Design & Prototyping',
           startMonth: 4,
-          endMonth: 5,
-          deliverables: [{ code: 'D2.1', month: 5 }]
+          endMonth: 7,
+          deliverables: [{ code: 'D3', month: 7 }]
         },
         {
           id: 'T2.2',
-          title: 'T2.2: Multimodal Training',
+          title: 'Multimodal Training Framework Implementation',
+          startMonth: 6,
+          endMonth: 10,
+          deliverables: [{ code: 'D4', month: 10 }]
+        },
+        {
+          id: 'T2.3',
+          title: 'Cross-Modal Alignment Mechanism',
           startMonth: 8,
-          endMonth: 13,
-          deliverables: [{ code: 'D2.2', month: 13 }]
+          endMonth: 12,
+          deliverables: [{ code: 'D5', month: 12 }]
         }
       ]
     },
     {
-      id: 'WP3',
-      title: 'WP3: Supervised Fine-Tuning',
+      id: 'Phase 3',
+      title: 'Model Fine-Tuning & Optimization',
       color: 'from-pink-400 to-pink-500',
       tasks: [
         {
           id: 'T3.1',
-          title: 'T3.1: Supervised Fine-Tuning on Visual Tasks',
-          startMonth: 13,
-          endMonth: 16,
-          deliverables: [{ code: 'D3.1', month: 16 }]
+          title: 'Supervised Fine-Tuning on Visual Tasks',
+          startMonth: 11,
+          endMonth: 14,
+          deliverables: [{ code: 'D6', month: 14 }]
         },
         {
           id: 'T3.2',
-          title: 'T3.2: Supervised Fine-Tuning on Audio/Speech Tasks',
+          title: 'Supervised Fine-Tuning on Audio/Speech Tasks',
+          startMonth: 11,
+          endMonth: 14,
+          deliverables: [{ code: 'D7', month: 14 }]
+        },
+        {
+          id: 'T3.3',
+          title: 'Model Optimization & Hyperparameter Tuning',
           startMonth: 13,
           endMonth: 16,
-          deliverables: [{ code: 'D3.2', month: 16 }]
+          deliverables: [{ code: 'D8', month: 16 }]
         }
       ]
     },
     {
-      id: 'WP4',
-      title: 'WP4: Neural Representation',
+      id: 'Phase 4',
+      title: 'Neural Decoding & Validation',
       color: 'from-blue-400 to-blue-500',
       tasks: [
         {
           id: 'T4.1',
-          title: 'T4.1: Neural Representation Learning and Decoding',
-          startMonth: 16,
-          endMonth: 24,
-          deliverables: [{ code: 'D4.1', month: 24 }],
-          notes: 'MIP Lab → NoCE Lab'
-        }
-      ]
-    },
-    {
-      id: 'WP5',
-      title: 'WP5: Dissemination & Exploitation',
-      color: 'from-yellow-400 to-yellow-500',
-      tasks: [
+          title: 'Neural Representation Learning',
+          startMonth: 15,
+          endMonth: 18,
+          deliverables: [{ code: 'D9', month: 18 }],
+          notes: 'MIP Lab'
+        },
         {
-          id: 'T6.1',
-          title: 'T6.1: Dissemination, Exploitation & Comm',
-          startMonth: 6,
+          id: 'T4.2',
+          title: 'Brain Signal Decoding Implementation',
+          startMonth: 17,
+          endMonth: 21,
+          deliverables: [{ code: 'D10', month: 21 }],
+          notes: 'NoCE Lab'
+        },
+        {
+          id: 'T4.3',
+          title: 'Validation & Performance Evaluation',
+          startMonth: 20,
           endMonth: 24,
-          deliverables: [
-            { code: 'D5.1', month: 6 },
-            { code: 'D5.2', month: 12 },
-            { code: 'D5.3', month: 23 },
-            { code: 'D5.4', month: 24 }
-          ]
+          deliverables: [{ code: 'D11', month: 24 }]
         }
       ]
     }
   ];
 
   const milestones = [
-    { id: 'M1', month: 10, title: 'M1: Architecture & Training Complete' },
-    { id: 'M2', month: 14, title: 'M2: Fine-Tuning Complete' },
-    { id: 'M3', month: 23, title: 'M3: Final Evaluation' }
+    { id: 'M1', month: 7, title: 'M1: Architecture Design Complete' },
+    { id: 'M2', month: 14, title: 'M2: Model Fine-Tuning Complete' },
+    { id: 'M3', month: 21, title: 'M3: Neural Decoding Validated' }
   ];
 
   const months = Array.from({ length: 24 }, (_, i) => i + 1);
@@ -153,128 +156,9 @@ const Timeline: React.FC = () => {
             Project Timeline
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A comprehensive 24-month roadmap outlining key work packages, milestones, and deliverables for the CASPER project
+            A comprehensive 24-month technical roadmap for the CASPER project, from literature review to neural decoding validation
           </p>
         </div>
-
-        <Card className="mb-8 overflow-x-auto">
-          <CardHeader>
-            <h3 className="text-xl font-semibold text-gray-900">Timeline Overview</h3>
-          </CardHeader>
-          <CardContent>
-            <div className="min-w-[800px]">
-              {/* Timeline Header - Months */}
-              <div className="mb-2">
-                <div className="grid grid-cols-24 gap-0.5 mb-1 ml-48">
-                  {months.map((month) => (
-                    <div
-                      key={month}
-                      className="text-xs text-center text-gray-600 font-medium border-r border-gray-200"
-                    >
-                      {month}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Quarters */}
-                <div className="grid grid-cols-8 gap-0 mb-4 ml-48">
-                  {Array.from({ length: 8 }, (_, i) => (
-                    <div
-                      key={i}
-                      className="text-sm text-center font-semibold text-gray-700 py-1 border-r border-gray-300 last:border-r-0"
-                    >
-                      {i < 4 ? `Y1 Q${i + 1}` : `Y2 Q${i - 3}`}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Work Packages */}
-              <div className="space-y-1">
-                {workPackages.map((wp) => (
-                  <div key={wp.id} className="border-b border-gray-200 pb-1">
-                    {wp.tasks.map((task, taskIndex) => (
-                      <div key={task.id} className="flex items-center mb-1 min-h-[40px]">
-                        {/* WP Label (only show for first task) */}
-                        {taskIndex === 0 && (
-                          <div className="w-16 flex-shrink-0">
-                            <span className={cn(
-                              "inline-block px-2 py-1 rounded text-xs font-bold text-white",
-                              `bg-gradient-to-r ${wp.color}`
-                            )}>
-                              {wp.id}
-                            </span>
-                          </div>
-                        )}
-                        {taskIndex !== 0 && <div className="w-16 flex-shrink-0"></div>}
-
-                        {/* Task Label */}
-                        <div className="w-32 flex-shrink-0 px-2">
-                          <span className="text-xs font-medium text-gray-700">
-                            {task.title}
-                          </span>
-                        </div>
-
-                        {/* Timeline Bar */}
-                        <div className="flex-1 relative h-8 bg-gray-100 rounded">
-                          <div
-                            className={cn(
-                              "absolute top-1 bottom-1 rounded flex items-center justify-center",
-                              `bg-gradient-to-r ${wp.color}`,
-                              "border border-white shadow-sm"
-                            )}
-                            style={getItemPosition(task.startMonth, task.endMonth)}
-                          >
-                            {task.notes && (
-                              <span className="text-[10px] font-medium text-white px-1">
-                                {task.notes}
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Deliverables */}
-                          {task.deliverables?.map((del) => (
-                            <div
-                              key={del.code}
-                              className="absolute top-0 bottom-0 flex items-center"
-                              style={getDeliverablePosition(del.month)}
-                            >
-                              <div className="bg-gray-800 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow-md whitespace-nowrap">
-                                {del.code}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-
-                {/* Milestones Row */}
-                <div className="flex items-center mt-4 min-h-[40px]">
-                  <div className="w-48 flex-shrink-0 px-2">
-                    <span className="text-xs font-bold text-gray-900">
-                      Milestones
-                    </span>
-                  </div>
-                  <div className="flex-1 relative h-8">
-                    {milestones.map((milestone) => (
-                      <div
-                        key={milestone.id}
-                        className="absolute top-0 bottom-0 flex items-center"
-                        style={getDeliverablePosition(milestone.month)}
-                      >
-                        <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap">
-                          {milestone.id}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Key Information */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -285,19 +169,19 @@ const Timeline: React.FC = () => {
             <CardContent>
               <p className="text-2xl font-bold text-blue-600 mb-2">24 Months</p>
               <p className="text-sm text-gray-600">
-                Comprehensive research and development cycle from architecture design to neural decoding
+                From literature review and data preparation to neural decoding validation
               </p>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <h3 className="text-lg font-semibold text-gray-900">Work Packages</h3>
+              <h3 className="text-lg font-semibold text-gray-900">Technical Phases</h3>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-blue-600 mb-2">5 WPs</p>
+              <p className="text-2xl font-bold text-blue-600 mb-2">4 Phases</p>
               <p className="text-sm text-gray-600">
-                Structured work packages covering management, architecture, training, fine-tuning, and dissemination
+                Structured research phases covering all aspects from design to validation
               </p>
             </CardContent>
           </Card>
@@ -315,21 +199,21 @@ const Timeline: React.FC = () => {
           </Card>
         </div>
 
-        {/* Detailed Work Package Descriptions */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Detailed Phase Descriptions */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-green-400 to-green-500"></div>
-                <h3 className="text-lg font-semibold text-gray-900">WP1: Management</h3>
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-purple-400 to-purple-500"></div>
+                <h3 className="text-lg font-semibold text-gray-900">Phase 1</h3>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Data & financial management</li>
-                <li>• Career development plan (CDP)</li>
-                <li>• Data management plan (DMP)</li>
-                <li>• Continuous monitoring & reporting</li>
+                <li>• Literature review</li>
+                <li>• State-of-the-art analysis</li>
+                <li>• Dataset collection</li>
+                <li>• Data preprocessing</li>
               </ul>
             </CardContent>
           </Card>
@@ -338,15 +222,15 @@ const Timeline: React.FC = () => {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="h-3 w-3 rounded-full bg-gradient-to-r from-orange-400 to-orange-500"></div>
-                <h3 className="text-lg font-semibold text-gray-900">WP2: Architecture</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Phase 2</h3>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• Novel architecture design</li>
                 <li>• Multimodal training framework</li>
-                <li>• Integration of GNN & LLM</li>
                 <li>• Cross-modal alignment</li>
+                <li>• Integration of GNN & LLM</li>
               </ul>
             </CardContent>
           </Card>
@@ -355,15 +239,15 @@ const Timeline: React.FC = () => {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="h-3 w-3 rounded-full bg-gradient-to-r from-pink-400 to-pink-500"></div>
-                <h3 className="text-lg font-semibold text-gray-900">WP3: Fine-Tuning</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Phase 3</h3>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Visual task optimization</li>
+                <li>• Visual task fine-tuning</li>
                 <li>• Audio/speech processing</li>
-                <li>• Supervised learning methods</li>
-                <li>• Performance evaluation</li>
+                <li>• Model optimization</li>
+                <li>• Hyperparameter tuning</li>
               </ul>
             </CardContent>
           </Card>
@@ -372,48 +256,15 @@ const Timeline: React.FC = () => {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500"></div>
-                <h3 className="text-lg font-semibold text-gray-900">WP4: Neural Decoding</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Phase 4</h3>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• Neural representation learning</li>
                 <li>• Brain signal decoding</li>
-                <li>• Collaboration with MIP Lab</li>
-                <li>• Validation at NoCE Lab</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500"></div>
-                <h3 className="text-lg font-semibold text-gray-900">WP5: Dissemination</h3>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Scientific publications</li>
-                <li>• Conference presentations</li>
-                <li>• Knowledge exploitation</li>
-                <li>• Community engagement</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-amber-500 to-amber-600"></div>
-                <h3 className="text-lg font-semibold text-gray-900">Milestones</h3>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• M1 (Month 10): Training complete</li>
-                <li>• M2 (Month 14): Fine-tuning done</li>
-                <li>• M3 (Month 23): Final evaluation</li>
+                <li>• Lab validation (MIP & NoCE)</li>
+                <li>• Performance evaluation</li>
               </ul>
             </CardContent>
           </Card>
