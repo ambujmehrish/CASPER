@@ -2,87 +2,134 @@ import React from 'react';
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-interface TimelineItem {
+interface Task {
   id: string;
   title: string;
-  type: 'milestone' | 'workpackage';
   startMonth: number;
   endMonth: number;
-  description: string;
-  deliverables?: string[];
+  deliverables?: Array<{ code: string; month: number }>;
+  notes?: string;
+}
+
+interface WorkPackage {
+  id: string;
+  title: string;
+  color: string;
+  tasks: Task[];
 }
 
 const Timeline: React.FC = () => {
-  const timelineData: TimelineItem[] = [
+  const workPackages: WorkPackage[] = [
     {
-      id: 'wp1',
-      title: 'WP1: Literature Review & Framework Development',
-      type: 'workpackage',
-      startMonth: 1,
-      endMonth: 6,
-      description: 'Comprehensive review of existing AI-neuroscience integration approaches and development of theoretical framework',
-      deliverables: ['Literature review report', 'Theoretical framework document']
+      id: 'WP1',
+      title: 'WP1: Management & Monitoring',
+      color: 'from-green-400 to-green-500',
+      tasks: [
+        {
+          id: 'T1.1',
+          title: 'T1.1: Data and Financial management & CDP',
+          startMonth: 1,
+          endMonth: 6,
+          deliverables: [
+            { code: 'CDP', month: 1 },
+            { code: 'DMP', month: 6 }
+          ]
+        },
+        {
+          id: 'T1.2',
+          title: 'T1.2: Planning and Monitoring',
+          startMonth: 6,
+          endMonth: 24,
+          deliverables: [
+            { code: 'D1.1', month: 6 },
+            { code: 'D1.2', month: 12 },
+            { code: 'D1.3', month: 24 }
+          ]
+        }
+      ]
     },
     {
-      id: 'm1',
-      title: 'M1: Framework Completion',
-      type: 'milestone',
-      startMonth: 6,
-      endMonth: 6,
-      description: 'Completion of theoretical framework and literature review'
+      id: 'WP2',
+      title: 'WP2: Architecture & Training',
+      color: 'from-orange-400 to-orange-500',
+      tasks: [
+        {
+          id: 'T2.1',
+          title: 'T2.1: Architecture Design',
+          startMonth: 4,
+          endMonth: 5,
+          deliverables: [{ code: 'D2.1', month: 5 }]
+        },
+        {
+          id: 'T2.2',
+          title: 'T2.2: Multimodal Training',
+          startMonth: 8,
+          endMonth: 13,
+          deliverables: [{ code: 'D2.2', month: 13 }]
+        }
+      ]
     },
     {
-      id: 'wp2',
-      title: 'WP2: Data Collection & Preprocessing',
-      type: 'workpackage',
-      startMonth: 4,
-      endMonth: 10,
-      description: 'Collection of neuroimaging data and development of preprocessing pipelines',
-      deliverables: ['Preprocessed datasets', 'Data quality reports']
+      id: 'WP3',
+      title: 'WP3: Supervised Fine-Tuning',
+      color: 'from-pink-400 to-pink-500',
+      tasks: [
+        {
+          id: 'T3.1',
+          title: 'T3.1: Supervised Fine-Tuning on Visual Tasks',
+          startMonth: 13,
+          endMonth: 16,
+          deliverables: [{ code: 'D3.1', month: 16 }]
+        },
+        {
+          id: 'T3.2',
+          title: 'T3.2: Supervised Fine-Tuning on Audio/Speech Tasks',
+          startMonth: 13,
+          endMonth: 16,
+          deliverables: [{ code: 'D3.2', month: 16 }]
+        }
+      ]
     },
     {
-      id: 'wp3',
-      title: 'WP3: AI Model Development',
-      type: 'workpackage',
-      startMonth: 7,
-      endMonth: 15,
-      description: 'Development and training of novel AI models for neuroscience applications',
-      deliverables: ['AI model prototypes', 'Performance evaluation reports']
+      id: 'WP4',
+      title: 'WP4: Neural Representation',
+      color: 'from-blue-400 to-blue-500',
+      tasks: [
+        {
+          id: 'T4.1',
+          title: 'T4.1: Neural Representation Learning and Decoding',
+          startMonth: 16,
+          endMonth: 24,
+          deliverables: [{ code: 'D4.1', month: 24 }],
+          notes: 'MIP Lab → NoCE Lab'
+        }
+      ]
     },
     {
-      id: 'm2',
-      title: 'M2: Model Validation',
-      type: 'milestone',
-      startMonth: 15,
-      endMonth: 15,
-      description: 'Successful validation of AI models on test datasets'
-    },
-    {
-      id: 'wp4',
-      title: 'WP4: Clinical Validation & Testing',
-      type: 'workpackage',
-      startMonth: 12,
-      endMonth: 20,
-      description: 'Validation of developed models in clinical settings and real-world scenarios',
-      deliverables: ['Clinical validation reports', 'User feedback analysis']
-    },
-    {
-      id: 'wp5',
-      title: 'WP5: Dissemination & Publication',
-      type: 'workpackage',
-      startMonth: 16,
-      endMonth: 24,
-      description: 'Publication of results and dissemination to scientific community',
-      deliverables: ['Peer-reviewed publications', 'Conference presentations']
-    },
-    {
-      id: 'm3',
-      title: 'M3: Project Completion',
-      type: 'milestone',
-      startMonth: 24,
-      endMonth: 24,
-      description: 'Final project deliverables and comprehensive evaluation'
+      id: 'WP5',
+      title: 'WP5: Dissemination & Exploitation',
+      color: 'from-yellow-400 to-yellow-500',
+      tasks: [
+        {
+          id: 'T6.1',
+          title: 'T6.1: Dissemination, Exploitation & Comm',
+          startMonth: 6,
+          endMonth: 24,
+          deliverables: [
+            { code: 'D5.1', month: 6 },
+            { code: 'D5.2', month: 12 },
+            { code: 'D5.3', month: 23 },
+            { code: 'D5.4', month: 24 }
+          ]
+        }
+      ]
     }
+  ];
+
+  const milestones = [
+    { id: 'M1', month: 10, title: 'M1: Architecture & Training Complete' },
+    { id: 'M2', month: 14, title: 'M2: Fine-Tuning Complete' },
+    { id: 'M3', month: 23, title: 'M3: Final Evaluation' }
   ];
 
   const months = Array.from({ length: 24 }, (_, i) => i + 1);
@@ -93,12 +140,9 @@ const Timeline: React.FC = () => {
     return { left: `${start}%`, width: `${width}%` };
   };
 
-  const getQuarter = (month: number) => {
-    return Math.ceil(month / 3);
-  };
-
-  const getYear = (month: number) => {
-    return month <= 12 ? 1 : 2;
+  const getDeliverablePosition = (month: number) => {
+    const left = ((month - 0.5) / 24) * 100;
+    return { left: `${left}%` };
   };
 
   return (
@@ -113,91 +157,127 @@ const Timeline: React.FC = () => {
           </p>
         </div>
 
-        <Card className="mb-8">
+        <Card className="mb-8 overflow-x-auto">
           <CardHeader>
             <h3 className="text-xl font-semibold text-gray-900">Timeline Overview</h3>
           </CardHeader>
           <CardContent>
-            {/* Timeline Header */}
-            <div className="mb-6">
-              <div className="grid grid-cols-24 gap-1 mb-2">
-                {months.map((month) => (
-                  <div
-                    key={month}
-                    className="text-xs text-center text-gray-500 font-medium"
-                  >
-                    {month}
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-8 gap-1 mb-4">
-                {Array.from({ length: 8 }, (_, i) => (
-                  <div
-                    key={i}
-                    className="text-sm text-center font-semibold text-gray-700 border-r border-gray-200 last:border-r-0"
-                  >
-                    {i < 4 ? `Y1 Q${i + 1}` : `Y2 Q${i - 3}`}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Timeline Items */}
-            <div className="space-y-4">
-              {timelineData.map((item, index) => (
-                <div key={item.id} className="relative">
-                  <div className="flex items-center mb-2">
-                    <div className="w-32 flex-shrink-0">
-                      <span
-                        className={cn(
-                          "inline-block px-2 py-1 rounded-full text-xs font-medium",
-                          item.type === 'milestone'
-                            ? "bg-purple-100 text-purple-800"
-                            : "bg-blue-100 text-blue-800"
-                        )}
-                      >
-                        {item.type === 'milestone' ? 'Milestone' : 'Work Package'}
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                      <p className="text-sm text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Timeline Bar */}
-                  <div className="relative h-8 bg-gray-100 rounded-lg mb-2 ml-32">
+            <div className="min-w-[800px]">
+              {/* Timeline Header - Months */}
+              <div className="mb-2">
+                <div className="grid grid-cols-24 gap-0.5 mb-1 ml-48">
+                  {months.map((month) => (
                     <div
-                      className={cn(
-                        "absolute top-1 bottom-1 rounded-md flex items-center justify-center text-xs font-medium text-white",
-                        item.type === 'milestone'
-                          ? "bg-gradient-to-r from-purple-500 to-purple-600"
-                          : "bg-gradient-to-r from-blue-500 to-blue-600"
-                      )}
-                      style={getItemPosition(item.startMonth, item.endMonth)}
+                      key={month}
+                      className="text-xs text-center text-gray-600 font-medium border-r border-gray-200"
                     >
-                      {item.startMonth === item.endMonth 
-                        ? `M${item.startMonth}` 
-                        : `M${item.startMonth}-${item.endMonth}`
-                      }
+                      {month}
                     </div>
-                  </div>
-
-                  {/* Deliverables */}
-                  {item.deliverables && (
-                    <div className="ml-32 text-sm text-gray-600">
-                      <span className="font-medium">Deliverables: </span>
-                      {item.deliverables.join(', ')}
-                    </div>
-                  )}
+                  ))}
                 </div>
-              ))}
+
+                {/* Quarters */}
+                <div className="grid grid-cols-8 gap-0 mb-4 ml-48">
+                  {Array.from({ length: 8 }, (_, i) => (
+                    <div
+                      key={i}
+                      className="text-sm text-center font-semibold text-gray-700 py-1 border-r border-gray-300 last:border-r-0"
+                    >
+                      {i < 4 ? `Y1 Q${i + 1}` : `Y2 Q${i - 3}`}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Work Packages */}
+              <div className="space-y-1">
+                {workPackages.map((wp) => (
+                  <div key={wp.id} className="border-b border-gray-200 pb-1">
+                    {wp.tasks.map((task, taskIndex) => (
+                      <div key={task.id} className="flex items-center mb-1 min-h-[40px]">
+                        {/* WP Label (only show for first task) */}
+                        {taskIndex === 0 && (
+                          <div className="w-16 flex-shrink-0">
+                            <span className={cn(
+                              "inline-block px-2 py-1 rounded text-xs font-bold text-white",
+                              `bg-gradient-to-r ${wp.color}`
+                            )}>
+                              {wp.id}
+                            </span>
+                          </div>
+                        )}
+                        {taskIndex !== 0 && <div className="w-16 flex-shrink-0"></div>}
+
+                        {/* Task Label */}
+                        <div className="w-32 flex-shrink-0 px-2">
+                          <span className="text-xs font-medium text-gray-700">
+                            {task.title}
+                          </span>
+                        </div>
+
+                        {/* Timeline Bar */}
+                        <div className="flex-1 relative h-8 bg-gray-100 rounded">
+                          <div
+                            className={cn(
+                              "absolute top-1 bottom-1 rounded flex items-center justify-center",
+                              `bg-gradient-to-r ${wp.color}`,
+                              "border border-white shadow-sm"
+                            )}
+                            style={getItemPosition(task.startMonth, task.endMonth)}
+                          >
+                            {task.notes && (
+                              <span className="text-[10px] font-medium text-white px-1">
+                                {task.notes}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Deliverables */}
+                          {task.deliverables?.map((del) => (
+                            <div
+                              key={del.code}
+                              className="absolute top-0 bottom-0 flex items-center"
+                              style={getDeliverablePosition(del.month)}
+                            >
+                              <div className="bg-gray-800 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow-md whitespace-nowrap">
+                                {del.code}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+
+                {/* Milestones Row */}
+                <div className="flex items-center mt-4 min-h-[40px]">
+                  <div className="w-48 flex-shrink-0 px-2">
+                    <span className="text-xs font-bold text-gray-900">
+                      Milestones
+                    </span>
+                  </div>
+                  <div className="flex-1 relative h-8">
+                    {milestones.map((milestone) => (
+                      <div
+                        key={milestone.id}
+                        className="absolute top-0 bottom-0 flex items-center"
+                        style={getDeliverablePosition(milestone.month)}
+                      >
+                        <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-bold px-2 py-1 rounded shadow-md whitespace-nowrap">
+                          {milestone.id}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Key Information */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           <Card>
             <CardHeader>
               <h3 className="text-lg font-semibold text-gray-900">Project Duration</h3>
@@ -205,7 +285,7 @@ const Timeline: React.FC = () => {
             <CardContent>
               <p className="text-2xl font-bold text-blue-600 mb-2">24 Months</p>
               <p className="text-sm text-gray-600">
-                Comprehensive research and development cycle from literature review to final dissemination
+                Comprehensive research and development cycle from architecture design to neural decoding
               </p>
             </CardContent>
           </Card>
@@ -217,7 +297,7 @@ const Timeline: React.FC = () => {
             <CardContent>
               <p className="text-2xl font-bold text-blue-600 mb-2">5 WPs</p>
               <p className="text-sm text-gray-600">
-                Structured work packages covering all aspects from research to implementation
+                Structured work packages covering management, architecture, training, fine-tuning, and dissemination
               </p>
             </CardContent>
           </Card>
@@ -231,6 +311,110 @@ const Timeline: React.FC = () => {
               <p className="text-sm text-gray-600">
                 Critical checkpoints ensuring project progress and quality deliverables
               </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Detailed Work Package Descriptions */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-green-400 to-green-500"></div>
+                <h3 className="text-lg font-semibold text-gray-900">WP1: Management</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Data & financial management</li>
+                <li>• Career development plan (CDP)</li>
+                <li>• Data management plan (DMP)</li>
+                <li>• Continuous monitoring & reporting</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-orange-400 to-orange-500"></div>
+                <h3 className="text-lg font-semibold text-gray-900">WP2: Architecture</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Novel architecture design</li>
+                <li>• Multimodal training framework</li>
+                <li>• Integration of GNN & LLM</li>
+                <li>• Cross-modal alignment</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-pink-400 to-pink-500"></div>
+                <h3 className="text-lg font-semibold text-gray-900">WP3: Fine-Tuning</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Visual task optimization</li>
+                <li>• Audio/speech processing</li>
+                <li>• Supervised learning methods</li>
+                <li>• Performance evaluation</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-400 to-blue-500"></div>
+                <h3 className="text-lg font-semibold text-gray-900">WP4: Neural Decoding</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Neural representation learning</li>
+                <li>• Brain signal decoding</li>
+                <li>• Collaboration with MIP Lab</li>
+                <li>• Validation at NoCE Lab</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500"></div>
+                <h3 className="text-lg font-semibold text-gray-900">WP5: Dissemination</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• Scientific publications</li>
+                <li>• Conference presentations</li>
+                <li>• Knowledge exploitation</li>
+                <li>• Community engagement</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-amber-500 to-amber-600"></div>
+                <h3 className="text-lg font-semibold text-gray-900">Milestones</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>• M1 (Month 10): Training complete</li>
+                <li>• M2 (Month 14): Fine-tuning done</li>
+                <li>• M3 (Month 23): Final evaluation</li>
+              </ul>
             </CardContent>
           </Card>
         </div>
