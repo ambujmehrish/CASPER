@@ -19,51 +19,60 @@ interface Institution {
 }
 
 const Team: React.FC = () => {
+  const researcher: TeamMember = {
+    name: "Ambuj Mehrish",
+    role: "MSCA Researcher",
+    institution: "Ca' Foscari University of Venice",
+    image: "/api/placeholder/200/200",
+    expertise: ["Multimodal AI", "Graph Neural Networks", "Neural Decoding"],
+    email: "ambuj.mehrish@unive.it"
+  };
+
   const supervisors: TeamMember[] = [
     {
-      name: "Dr. Sarah Mitchell",
+      name: "Prof. Sebastiano Vascon",
       role: "Principal Supervisor",
-      institution: "University of Cambridge",
+      institution: "Ca' Foscari University of Venice",
       image: "/api/placeholder/200/200",
-      expertise: ["Computational Neuroscience", "Machine Learning", "Brain Imaging"],
-      email: "s.mitchell@cam.ac.uk"
+      expertise: ["Computer Vision", "Graph Neural Networks", "Pattern Recognition"],
+      email: "sebastiano.vascon@unive.it"
     },
     {
-      name: "Prof. Marco Rossi",
+      name: "Prof. Dimitri Van De Ville",
       role: "Co-Supervisor",
-      institution: "University of Bologna",
+      institution: "Neuro-X Institute, EPFL",
       image: "/api/placeholder/200/200",
-      expertise: ["Artificial Intelligence", "Neural Networks", "Data Science"],
-      email: "marco.rossi@unibo.it"
+      expertise: ["Neuroimaging", "Signal Processing", "Brain Connectivity"],
+      email: "dimitri.vandeville@epfl.ch"
     },
     {
-      name: "Dr. Elena Kowalski",
-      role: "Industry Supervisor",
-      institution: "NeuroTech Solutions",
+      name: "Prof. Valentina Borghesani",
+      role: "Co-Supervisor",
+      institution: "NoCE Labs, University of Geneva",
       image: "/api/placeholder/200/200",
-      expertise: ["AI Applications", "Healthcare Technology", "Product Development"],
-      email: "e.kowalski@neurotech.com"
+      expertise: ["Cognitive Neuroscience", "Semantic Processing", "fMRI Analysis"],
+      email: "valentina.borghesani@unige.ch"
     }
   ];
 
   const institutions: Institution[] = [
     {
-      name: "University of Cambridge",
+      name: "Ca' Foscari University of Venice",
       logo: "/api/placeholder/120/80",
-      description: "Leading research in computational neuroscience and AI applications in healthcare.",
-      website: "https://www.cam.ac.uk"
+      description: "Leading research in computer science, artificial intelligence, and environmental sciences.",
+      website: "https://www.unive.it"
     },
     {
-      name: "University of Bologna",
+      name: "EPFL - Neuro-X Institute",
       logo: "/api/placeholder/120/80",
-      description: "Excellence in artificial intelligence research and interdisciplinary collaboration.",
-      website: "https://www.unibo.it"
+      description: "Excellence in neuroimaging, brain signal processing, and computational neuroscience.",
+      website: "https://www.epfl.ch/research/domains/neuro-x/"
     },
     {
-      name: "NeuroTech Solutions",
+      name: "University of Geneva - NoCE Labs",
       logo: "/api/placeholder/120/80",
-      description: "Industry leader in AI-powered neurotechnology and healthcare solutions.",
-      website: "https://www.neurotech.com"
+      description: "Pioneering research in cognitive neuroscience and semantic processing.",
+      website: "https://www.unige.ch"
     },
     {
       name: "European Commission",
@@ -82,8 +91,68 @@ const Team: React.FC = () => {
             Research Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet the expert supervisors and partner institutions driving the CASPER project forward
+            Meet the researcher and expert supervisors driving the CASPER project forward
           </p>
+        </div>
+
+        {/* Researcher Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Researcher
+          </h3>
+          <div className="flex justify-center">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg max-w-md w-full">
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="relative mb-6">
+                    <img
+                      src={researcher.image}
+                      alt={researcher.name}
+                      className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 w-32 h-32 mx-auto"></div>
+                  </div>
+
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">
+                    {researcher.name}
+                  </h4>
+
+                  <p className="text-blue-600 font-semibold mb-2">
+                    {researcher.role}
+                  </p>
+
+                  <p className="text-gray-600 mb-4">
+                    {researcher.institution}
+                  </p>
+
+                  {researcher.email && (
+                    <a
+                      href={`mailto:${researcher.email}`}
+                      className="text-sm text-blue-500 hover:text-blue-700 mb-4 block"
+                    >
+                      {researcher.email}
+                    </a>
+                  )}
+
+                  <div className="space-y-2">
+                    <p className="text-sm font-semibold text-gray-700 mb-2">
+                      Expertise:
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {researcher.expertise.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         {/* Supervisors Section */}
@@ -104,19 +173,19 @@ const Team: React.FC = () => {
                       />
                       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 w-32 h-32 mx-auto"></div>
                     </div>
-                    
+
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
                       {supervisor.name}
                     </h4>
-                    
+
                     <p className="text-blue-600 font-semibold mb-2">
                       {supervisor.role}
                     </p>
-                    
+
                     <p className="text-gray-600 mb-4">
                       {supervisor.institution}
                     </p>
-                    
+
                     {supervisor.email && (
                       <a
                         href={`mailto:${supervisor.email}`}
@@ -125,7 +194,7 @@ const Team: React.FC = () => {
                         {supervisor.email}
                       </a>
                     )}
-                    
+
                     <div className="space-y-2">
                       <p className="text-sm font-semibold text-gray-700 mb-2">
                         Expertise:
@@ -165,16 +234,16 @@ const Team: React.FC = () => {
                         className="h-16 mx-auto object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    
+
                     <h4 className="text-lg font-bold text-gray-900 mb-4">
                       {institution.name}
                     </h4>
-                    
+
                     <p className="text-gray-600 text-sm mb-6 flex-grow">
                       {institution.description}
                     </p>
                   </div>
-                  
+
                   <div className="mt-auto">
                     <a
                       href={institution.website}
@@ -199,10 +268,10 @@ const Team: React.FC = () => {
                 Collaborative Excellence
               </h4>
               <p className="text-gray-700 leading-relaxed">
-                The CASPER project brings together world-class researchers from leading academic institutions 
-                and industry partners. This interdisciplinary collaboration combines expertise in computational 
-                neuroscience, artificial intelligence, and healthcare technology to advance our understanding 
-                of brain function and develop innovative AI solutions for neurological applications.
+                The CASPER project brings together world-class researchers from leading academic institutions
+                across Europe. This interdisciplinary collaboration combines expertise in computer science,
+                neuroscience, and cognitive science to advance multimodal AI systems and neural decoding
+                technologies for speech and audio reconstruction.
               </p>
             </CardContent>
           </Card>
