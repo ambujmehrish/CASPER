@@ -57,28 +57,28 @@ const Team: React.FC = () => {
 
   const institutions: Institution[] = [
     {
-      name: "Ca' Foscari University of Venice",
+      name: "CVML Lab - Ca' Foscari University",
       logo: "/api/placeholder/120/80",
-      description: "Leading research in computer science, artificial intelligence, and environmental sciences.",
-      website: "https://www.unive.it"
+      description: "Computer Vision and Machine Learning laboratory, internationally renowned for pioneering work in graph theory, game theory, and computer vision applications.",
+      website: "https://www.unive.it/data/persone/5592033"
     },
     {
-      name: "EPFL - Neuro-X Institute",
+      name: "MIPLab - EPFL",
       logo: "/api/placeholder/120/80",
-      description: "Excellence in neuroimaging, brain signal processing, and computational neuroscience.",
-      website: "https://www.epfl.ch/research/domains/neuro-x/"
+      description: "Medical Image Processing Lab at Neuro-X Institute, dedicated to advanced neuroimaging and signal processing for brain functional connectivity research.",
+      website: "https://miplab.epfl.ch/"
     },
     {
-      name: "University of Geneva - NoCE Labs",
+      name: "NoCE Lab - UNIGE",
       logo: "/api/placeholder/120/80",
-      description: "Pioneering research in cognitive neuroscience and semantic processing.",
+      description: "Neurobiology of Concepts Expression Laboratory, leading pioneering research at the nexus of neurobiology, semantics, and language processing.",
       website: "https://www.unige.ch"
     },
     {
       name: "European Commission",
       logo: "/api/placeholder/120/80",
       description: "Supporting innovative research through the Marie Skłodowska-Curie Actions program.",
-      website: "https://ec.europa.eu"
+      website: "https://ec.europa.eu/research/mariecurieactions/"
     }
   ];
 
